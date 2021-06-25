@@ -1,0 +1,74 @@
+:root {
+    --contents-width : 500px;
+    --contents-height : 700px;
+    --main-size : 400px;
+    --color-background : #F4CC50;
+    --color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --font-large : 30px;
+    --font-medium : 22px;
+}
+
+
+@font-face {
+    font-family: 'UhBeeSe_hyun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeSe_hyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+button {
+    font-family: 'UhBeeSe_hyun';
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+body {
+    display: flex;
+    font-family: 'UhBeeSe_hyun';
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background: url(img/background.png) center repeat;
+}
+
+.mbti__contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin : 25px 0;
+    width: var(--contents-width);
+    height: var(--contents-height);
+    background-color: var(--color-background);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contents__main {
+    width: var(--main-size);
+}
+
+h1 {
+    font-size: var(--font-large);
+    color: var(--color-light-white);
+}
+
+h3 {
+    font-size: var(--font-medium);
+}
+
+@media screen and (max-width: 768px){
+    :root {
+        --contents-width : 400px;
+        --contents-height : 600px;
+        --font-large : 24px;
+        --font-medium : 18px;
+        --font-small : 14px;
+        --font-micro : 12px;
+        --main-size : 300px;
+    }
+}
