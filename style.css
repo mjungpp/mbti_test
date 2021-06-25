@@ -17,16 +17,6 @@
     font-style: normal;
 }
 
-button {
-    font-family: 'UhBeeSe_hyun';
-    outline: none;
-    border: none;
-    cursor: pointer;
-    width: 300px;
-    height: 50px;
-    border-radius: 4px;
-}
-
 body {
     display: flex;
     font-family: 'UhBeeSe_hyun';
@@ -48,7 +38,29 @@ body {
     text-align: center;
 }
 
-.contents__main {
+.mbti__start{
+    display: block;
+}
+
+.mbti__start.--hide{
+    display: none;
+}
+
+.mbti__startBtn {
+    font-family: 'UhBeeSe_hyun';
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    border-radius: 4px;
+}
+.mbti__startBtn:hover{
+    transform: scale(1.05);
+    transition: 300ms ease-in;
+}
+
+.main__img {
     width: var(--main-size);
 }
 
@@ -57,8 +69,28 @@ h1 {
     color: var(--color-light-white);
 }
 
-h3 {
+.mbti__title{
     font-size: var(--font-medium);
+    color: var(--color-light-white);
+}
+/*
+.mbti__title:after {
+    content: '';
+    background-color: black;
+    width: 500px;
+    height: 1px;
+}
+*/
+
+h3 {
+    font-size: var(--font-small);
+}
+
+.mbti__question{
+    visibility: visible;
+}
+.mbti__question.--hide{
+    visibility: hidden;
 }
 
 @media screen and (max-width: 768px){
