@@ -1,6 +1,8 @@
 :root {
     --contents-width : 500px;
-    --contents-height : 700px;
+    --contents-height : 800px;
+    --img-width : 400px;
+    --img-height : 320px;
     --main-size : 400px;
     --color-yellow : #F4CC50;
     --color-red : #E66063;
@@ -81,9 +83,6 @@ h3 {
 .main__img {
     width: var(--main-size);
 }
-
-
-
 .mbti__title{
     font-size: var(--font-medium);
     color: var(--color-white);
@@ -91,7 +90,7 @@ h3 {
 
 .mbti__asking {
     text-align: center;
-    width: 300px;
+    width: 400px;
 }
 
 .mbti__question{
@@ -117,7 +116,15 @@ h3 {
     border-radius: 5px 0 0 5px;
 }
 
+.mbti__testImg{
+    width: var(--img-width);
+    height: var(--img-height);
+    margin: auto;
+    margin-bottom: 20px;
+}
+
 .mbti__selectBtn {
+    margin: auto;
     margin-bottom: 35px;
 }
 
@@ -137,5 +144,7 @@ h3 {
         --font-small : 14px;
         --font-micro : 8px;
         --main-size : 300px;
+        --img-width : 300px;
+        --img-height : 240px;
     }
 }

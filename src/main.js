@@ -10,6 +10,7 @@ const type = document.querySelector('#type').dataset.value;
 const values = document.querySelectorAll('input');
 let questionNum = 1;
 
+// start로 테스트 시작
 startBtn.addEventListener('click', startTest);
 
 function startTest(){
@@ -24,8 +25,12 @@ function proceedProgressBar() {
 
 }
 
-function questionTitle() {
-    title.innerHTML = `${}`;
+function setTest(questions) {
+  for(let i = 1; i < questions.length; i++){
+      console.log(questions);
+    title.innerHTML = `${questions[i].question}`
+  }
+
 }
 
 function countScore() {
@@ -38,16 +43,13 @@ function countScore() {
     });
 }
 
-loadQuestions();
-
 function loadQuestions() {
-    return fetch('../data/data.json')
+    return fetch('data/data.json')
     .then(response => response.json())
-    .then(json =>json.items);
+    .then(json =>json.questions);
 }
 
 loadQuestions()
-.then(items => {
-    console.log(items);
+.then(questions => {
+    setTest(questions);
 });
-
