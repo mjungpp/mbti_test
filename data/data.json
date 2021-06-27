@@ -1,0 +1,25 @@
+{
+    "questions" : [
+        {
+            "number" : "1",
+            "question" : "문제 1번",
+            "type" : "EI",
+            "A" : "E",
+            "B" : "I"
+        },
+        {
+            "number" : "2",
+            "question" : "문제 2번",
+            "type" : "EI",
+            "A" : "E",
+            "B" : "I"
+        },
+        {
+            "number" : "3",
+            "question" : "문제 3번",
+            "type" : "EI",
+            "A" : "E",
+            "B" : "I"
+        }
+    ]
+}

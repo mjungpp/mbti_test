@@ -28,6 +28,25 @@ body {
     background: url(img/background.png) center repeat;
 }
 
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+h1 {
+    font-size: var(--font-large);
+    color: var(--color-white);
+}
+
+h3 {
+    font-size: var(--font-small);
+}
+
+
 .mbti__contents {
     position: relative;
     display: flex;
@@ -51,12 +70,6 @@ body {
 
 .mbti__startBtn {
     font-family: 'UhBeeSe_hyun';
-    outline: none;
-    border: none;
-    cursor: pointer;
-    width: 300px;
-    height: 50px;
-    border-radius: 4px;
     background-color: #4DA953;
     color: var(--color-light-white);
 }
@@ -69,29 +82,21 @@ body {
     width: var(--main-size);
 }
 
-h1 {
-    font-size: var(--font-large);
-    color: var(--color-light-white);
-}
+
 
 .mbti__title{
     font-size: var(--font-medium);
-    color: var(--color-light-white);
+    color: var(--color-white);
 }
-/*
-.mbti__title:after {
-    content: '';
-    background-color: black;
-    width: 500px;
-    height: 1px;
-}
-*/
 
-h3 {
-    font-size: var(--font-small);
+.mbti__asking {
+    text-align: center;
+    width: 300px;
 }
 
 .mbti__question{
+    display: flex;
+    flex-direction: column;
     visibility: visible;
 }
 .mbti__question.--hide{
@@ -103,21 +108,24 @@ h3 {
   width: 100%;
   height: 10px;
   border-radius: 5px;
-  /* border: 1px solid white; */
+  margin-bottom: 30px;
 }
 .skill__value {
     background-color: #E66063;
     height: 10px;
     width: 5%;
     border-radius: 5px 0 0 5px;
+}
 
+.mbti__selectBtn {
+    margin-bottom: 35px;
 }
 
 .mbti__copyright {
     position: absolute;
     font-size: var(--font-micro);
     bottom: 10px;
-    color: var(--color-light-white);
+    color: var(--color-white);
 }
 
 @media screen and (max-width: 768px){
