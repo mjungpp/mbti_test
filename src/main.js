@@ -7,10 +7,12 @@ const questionContent = document.querySelector('.mbti__question.--hide');
 const progressBar = document.querySelector('.skill__value');
 const selectBtn = document.querySelector('.mbti__selectBtn');
 const img = document.querySelector('.mbti__testImg');
+const oneBtn = document.querySelector('#A');
+const twoBtn = document.querySelector('#B');
 
 // const type = document.querySelector('#type').dataset.value;
 // const values = document.querySelectorAll('input');
-let questionNum = 1;
+let questionNum = 0;
 const QUESTION_END = 12;
 
 let EIIndex = 0;
@@ -53,14 +55,17 @@ loadQuestions()
 
 // 5. test 문항 보이게 함
 function setTest(questions) {
-  for(let i = 1; i < questions.length; i++){
+  for(let i = 0; i < QUESTION_END; i++){
       console.log(`i:${i}`);
       console.log(`questionNum:${questionNum}`);
       if( i == questionNum) {
-          title.innerHTML = `${questions[questionNum].question}`
+          title.innerHTML = `${questions[questionNum].question}`;
+          oneBtn.innerHTML = `${questions[questionNum].A}`;
+          twoBtn.innerHTML = `${questions[questionNum].B}`;
       }
   }
-  questionContent.addEventListener('click', progressQuestion);
+  ++questionNum;
+  questionContent.addEventListener('click', setTest);
 }
 
 function progressQuestion(){
