@@ -6,13 +6,13 @@ const title = document.querySelector('.mbti__asking');
 const questionContent = document.querySelector('.mbti__question.--hide');
 const resultContent = document.querySelector('.mbti__result.--hide');
 const progressBar = document.querySelector('.skill__value');
-const selectBtn = document.querySelector('.mbti__selectBtn');
+
+const buttonA = document.querySelector('#A');
+const buttonB = document.querySelector('#B');
 const replayBtn = document.querySelector('.result__replay');
 const img = document.querySelector('.mbti__testImg');
-const oneBtn = document.querySelector('#A');
-const twoBtn = document.querySelector('#B');
 
-let questionNum = 1;
+let questionNum = 0;
 const QUESTION_END = 12;
 
 let EIScore = 0;
@@ -29,7 +29,6 @@ replayBtn.addEventListener('click', startTest);
 function startTest() {
     sectionShowHide();
     proceedProgressBar();
-    // progressTest();
     if(questionNum == QUESTION_END){
         finishTest();
     }
@@ -41,8 +40,7 @@ function sectionShowHide(){
 }
 
 function proceedProgressBar() {
-    console.log('questionNum : ', questionNum);
-    progressBar.style.width = `calc(100 / 12 * ${questionNum}%)`;
+    progressBar.style.width = `calc(100 / 12 * ${questionNum+1}%)`;
 }
 
 function loadQuestions() {
@@ -54,29 +52,44 @@ function loadQuestions() {
 
 loadQuestions()
 .then(questions => {
-    proceedProgressBar();
     progressTest(questions);
-    resultContent.addEventListener('click', (questions) => {
-        console.log('result 클릭');
-        progressTest(questions);
-    });
+    setEventListners(questions);
 });
 
 function progressTest(questions) {
-  for(let i = 1; i < QUESTION_END; i++){
+  for(let i = 0; i < QUESTION_END; i++){
       if( i == questionNum) {
           title.innerHTML = `${questions[questionNum].question}`;
-          oneBtn.innerHTML = `${questions[questionNum].A}`;
-          twoBtn.innerHTML = `${questions[questionNum].B}`;
+          buttonA.innerHTML = `${questions[questionNum].A}`;
+          buttonB.innerHTML = `${questions[questionNum].B}`;
           img.src = `${questions[questionNum].imgPath}`;
       }
   }
-  ++questionNum;
-//   questionContent.addEventListener('click', progressTest);
 }
 
+function setEventListners(questions){
+    questionContent.addEventListener('click', (event) => {
+        if(event.target.id == 'A' || event.target.id == 'B'){
+            ++questionNum;
+            proceedProgressBar();
+            progressTest(questions);
+            countScore(event.target.id);
+        }
+    });
+}
+
+function countScore(id){
+
+    if(id == 'A'){
+       console.log('button a 클릭');
+    }
+    if(id =='B'){
+        return;
+    }
+}
 
 function finishTest() {
+    console.log('finishTest 수행됨');
     resultSectionShow();
 }
 

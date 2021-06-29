@@ -1,6 +1,7 @@
 :root {
   --contents-width: 500px;
   --contents-height: 800px;
+  --title-width: 400px;
   --img-width: 400px;
   --img-height: 320px;
   --result-width: 300px;
@@ -103,7 +104,7 @@ span {
 
 .mbti__asking {
   margin: auto;
-  width: 400px;
+  width: var(--title-width);
   margin-bottom: 25px;
 }
 
@@ -145,7 +146,10 @@ span {
   border: 2px dashed var(--color-red);
   background-color: var(--color-white);
   font-size: var(--font-micro);
-  /* transform: ; */
+}
+.mbti__selectBtn:hover {
+  transform: scale(1.05);
+  transition: 300ms ease-in;
 }
 
 .mbti__result {
@@ -205,17 +209,19 @@ span {
   :root {
     --contents-width: 350px;
     --contents-height: 600px;
+    --title-width: 300px;
     --font-large: 20px;
     --font-medium: 18px;
     --font-small: 14px;
     --font-micro: 8px;
     --main-size: 300px;
-    --img-width: 250px;
+    --img-width: 300px;
     --img-height: 240px;
     --margin-updown: 15px;
     --result-width: 250px;
     --button-width: 250px;
   }
+
   .result__title {
     padding: 4px 2px;
   }
