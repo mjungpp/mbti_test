@@ -4,81 +4,85 @@ const startBtn = document.querySelector('.mbti__startBtn');
 const startContent = document.querySelector('.mbti__start');
 const title = document.querySelector('.mbti__asking');
 const questionContent = document.querySelector('.mbti__question.--hide');
+const resultContent = document.querySelector('.mbti__result.--hide');
 const progressBar = document.querySelector('.skill__value');
 const selectBtn = document.querySelector('.mbti__selectBtn');
+const replayBtn = document.querySelector('.result__replay');
 const img = document.querySelector('.mbti__testImg');
 const oneBtn = document.querySelector('#A');
 const twoBtn = document.querySelector('#B');
 
-// const type = document.querySelector('#type').dataset.value;
-// const values = document.querySelectorAll('input');
-let questionNum = 0;
+let questionNum = 1;
 const QUESTION_END = 12;
 
-let EIIndex = 0;
-let SNIndex = 0;
-let TFIndex = 0;
-let JPIndex = 0;
+let EIScore = 0;
+let SNScore = 0;
+let TFScore = 0;
+let JPScore = 0;
 
 // start로 테스트 시작
 startBtn.addEventListener('click', startTest);
 
-function startTest(){
+// replay로 테스트 다시 시작
+replayBtn.addEventListener('click', startTest);
+
+function startTest() {
     sectionShowHide();
-    loadQuestions();
     proceedProgressBar();
+    // progressTest();
+    if(questionNum == QUESTION_END){
+        finishTest();
+    }
 }
 
-// 1. start시 메인 영역을 없애고 질문 영역을 보이게 함
 function sectionShowHide(){
     startContent.classList.add('--hide');
     questionContent.classList.remove('--hide');
 }
 
-// 2. progress bar를 진행 상황에 따라 증가
 function proceedProgressBar() {
+    console.log('questionNum : ', questionNum);
     progressBar.style.width = `calc(100 / 12 * ${questionNum}%)`;
 }
 
-// 3. 질문 초기 셋팅
 function loadQuestions() {
     return fetch('data/data.json')
     .then(response => response.json())
-    .then(json =>json.questions);
+    .then(json =>json.questions)
+    .catch(console.error);
 }
 
-// 4. json으로부터 문항을 받음
 loadQuestions()
 .then(questions => {
-    setTest(questions);
+    proceedProgressBar();
+    progressTest(questions);
+    resultContent.addEventListener('click', (questions) => {
+        console.log('result 클릭');
+        progressTest(questions);
+    });
 });
 
-// 5. test 문항 보이게 함
-function setTest(questions) {
-  for(let i = 0; i < QUESTION_END; i++){
-      console.log(`i:${i}`);
-      console.log(`questionNum:${questionNum}`);
+function progressTest(questions) {
+  for(let i = 1; i < QUESTION_END; i++){
       if( i == questionNum) {
           title.innerHTML = `${questions[questionNum].question}`;
           oneBtn.innerHTML = `${questions[questionNum].A}`;
           twoBtn.innerHTML = `${questions[questionNum].B}`;
+          img.src = `${questions[questionNum].imgPath}`;
       }
   }
   ++questionNum;
-  questionContent.addEventListener('click', setTest);
+//   questionContent.addEventListener('click', progressTest);
 }
 
-function progressQuestion(){
-    console.log('progressQuestion 실행');
+
+function finishTest() {
+    resultSectionShow();
 }
 
-// function countScore() {
-//     ++questionNum;
-//     console.log(type);
-//     values.forEach(value => {
-//         if(type == value.dataset.type){
-//             console.log(++value.dataset.value);
-//         }
-//     });
-// }
+// 결과 영역을 보여줌
+function resultSectionShow() {
+    startContent.classList.add('--hide');
+    resultContent.classList.remove('--hide');
+}
 

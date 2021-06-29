@@ -3,14 +3,21 @@
   --contents-height: 800px;
   --img-width: 400px;
   --img-height: 320px;
+  --result-width: 300px;
+  --button-width: 400px;
   --main-size: 400px;
   --color-yellow: #f4cc50;
   --color-red: #e66063;
   --color-white: #ffffff;
+  --color-blue: #0063dc;
+  --color-orange: #fd7e14;
+  --color-green: #4da953;
   --color-light-white: #eeeeee;
   --font-large: 30px;
   --font-medium: 22px;
-  --font-micro: 10px;
+  --font-micro: 12px;
+  --margin-updown: 10px;
+  --border-radius: 5px;
 }
 
 @font-face {
@@ -34,9 +41,9 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
-  width: 300px;
+  width: var(--button-width);
   height: 50px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   font-family: 'UhBeeSe_hyun';
 }
 
@@ -47,6 +54,10 @@ h1 {
 
 h3 {
   font-size: var(--font-small);
+}
+
+span {
+  font-size: var(--font-micro);
 }
 
 .mbti__contents {
@@ -72,8 +83,9 @@ h3 {
 
 .mbti__startBtn {
   font-family: 'UhBeeSe_hyun';
-  background-color: #4da953;
+  background-color: var(--color-green);
   color: var(--color-light-white);
+  width: var(--button-width);
 }
 .mbti__startBtn:hover {
   transform: scale(1.05);
@@ -82,6 +94,7 @@ h3 {
 
 .main__img {
   width: var(--main-size);
+  border-radius: var(--border-radius);
 }
 .mbti__title {
   font-size: var(--font-medium);
@@ -89,64 +102,129 @@ h3 {
 }
 
 .mbti__asking {
-  text-align: center;
+  margin: auto;
   width: 400px;
+  margin-bottom: 25px;
 }
 
 .mbti__question {
   display: flex;
   flex-direction: column;
-  visibility: visible;
+  display: block;
 }
 .mbti__question.--hide {
-  visibility: hidden;
+  display: none;
 }
 
 .mbti__skill__bar {
   background-color: white;
-  width: 100%;
+  width: 80%;
   height: 10px;
-  border-radius: 5px;
-  margin-bottom: 30px;
+  border-radius: var(--border-radius);
+  margin: auto;
+  margin-bottom: var(--margin-updown);
 }
 .skill__value {
-  background-color: #e66063;
+  background-color: var(--color-red);
   height: 10px;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: var(--border-radius);
 }
 
 .mbti__testImg {
   width: var(--img-width);
   height: var(--img-height);
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: var(--margin-updown);
   border-radius: 4px;
 }
 
 .mbti__selectBtn {
+  width: var(--button-width);
   margin: auto;
-  margin-bottom: 35px;
+  margin-bottom: var(--margin-updown);
   border: 2px dashed var(--color-red);
-  background-color: var(--color-light-white);
+  background-color: var(--color-white);
+  font-size: var(--font-micro);
+  /* transform: ; */
+}
+
+.mbti__result {
+  display: block;
+  width: 100%;
+}
+
+.mbti__result.--hide {
+  display: none;
+}
+
+.result__title {
+  color: var(--color-white);
+  margin: 0;
+  padding: 14px 8px;
+}
+
+.result__character {
+  color: var(--color-orange);
+  margin: 10px;
+}
+
+.result__img {
+  display: block;
+  width: var(--result-width);
+  margin: auto;
+  margin-bottom: var(--margin-updown);
+}
+
+.result__explanation {
+  display: block;
+  text-align: center;
+  padding: 14px 8px;
+}
+
+.result__replay {
+  display: block;
+  margin: auto;
+  margin-top: var(--margin-updown);
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.result__matching__title,
+.result__unmatching__title {
+  color: var(--color-white);
 }
 
 .mbti__copyright {
   position: absolute;
   font-size: var(--font-micro);
   bottom: 10px;
-  color: var(--color-white);
+  color: var(--color-green);
 }
 
 @media screen and (max-width: 768px) {
   :root {
-    --contents-width: 400px;
+    --contents-width: 350px;
     --contents-height: 600px;
-    --font-large: 24px;
+    --font-large: 20px;
     --font-medium: 18px;
     --font-small: 14px;
     --font-micro: 8px;
     --main-size: 300px;
-    --img-width: 300px;
+    --img-width: 250px;
     --img-height: 240px;
+    --margin-updown: 15px;
+    --result-width: 250px;
+    --button-width: 250px;
+  }
+  .result__title {
+    padding: 4px 2px;
+  }
+
+  .result__replay {
+    width: 100px;
+    height: 30px;
+  }
+  .result__explanation {
+    padding: 8px 4px;
   }
 }
