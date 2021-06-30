@@ -202,7 +202,7 @@ span {
   position: absolute;
   font-size: var(--font-micro);
   bottom: 10px;
-  color: var(--color-green);
+  color: var(--color-light-white);
 }
 
 @media screen and (max-width: 768px) {

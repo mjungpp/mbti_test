@@ -20,27 +20,26 @@ let SNScore = 0;
 let TFScore = 0;
 let JPScore = 0;
 
-// start로 테스트 시작
-startBtn.addEventListener('click', startTest);
-
-// replay로 테스트 다시 시작
-replayBtn.addEventListener('click', startTest);
-
-function startTest() {
+function startTest(questions) {
     sectionShowHide();
     proceedProgressBar();
-    if(questionNum == QUESTION_END){
-        finishTest();
-    }
+    progressTest(questions);
+
+}
+
+function initTest(questions){
+    questionNum = 0;
+    EIScore = 0;
+    SNScore = 0;
+    TFScore = 0;
+    JPScore = 0;
+    resultContent.classList.add('--hide');
+    startTest(questions);
 }
 
 function sectionShowHide(){
     startContent.classList.add('--hide');
     questionContent.classList.remove('--hide');
-}
-
-function proceedProgressBar() {
-    progressBar.style.width = `calc(100 / 12 * ${questionNum+1}%)`;
 }
 
 function loadQuestions() {
@@ -52,9 +51,29 @@ function loadQuestions() {
 
 loadQuestions()
 .then(questions => {
-    progressTest(questions);
     setEventListners(questions);
 });
+
+function setEventListners(questions){
+    startBtn.addEventListener('click', () => {
+        startTest(questions);
+    });
+    questionContent.addEventListener('click', (event) => {
+        if(event.target.id == 'A' || event.target.id == 'B'){
+            ++questionNum;
+            proceedProgressBar();
+            countScore(event.target.id);
+            progressTest(questions);
+        }
+    });
+    replayBtn.addEventListener('click', () => {
+        initTest();
+    });
+}
+
+function proceedProgressBar() {
+    progressBar.style.width = `calc(100 / 12 * ${questionNum+1}%)`;
+}
 
 function progressTest(questions) {
   for(let i = 0; i < QUESTION_END; i++){
@@ -67,35 +86,40 @@ function progressTest(questions) {
   }
 }
 
-function setEventListners(questions){
-    questionContent.addEventListener('click', (event) => {
-        if(event.target.id == 'A' || event.target.id == 'B'){
-            ++questionNum;
-            proceedProgressBar();
-            progressTest(questions);
-            countScore(event.target.id);
-        }
-    });
-}
-
 function countScore(id){
-
-    if(id == 'A'){
-       console.log('button a 클릭');
+    if(id == 'A') {
+        if(questionNum < 4) {
+            console.log(questionNum);
+            EIScore = EIScore + 1;
+        }
+        if(questionNum >= 4 && questionNum < 7){
+            console.log(questionNum);
+            SNScore = SNScore + 1;
+        }
+        if(questionNum >=7 && questionNum < 10){
+            console.log(questionNum);
+            TFScore = TFScore + 1;
+        }
+        if(questionNum >= 10 && questionNum < 13){
+            console.log(questionNum);
+            JPScore = JPScore + 1;
+        }
     }
-    if(id =='B'){
-        return;
+    if(questionNum == QUESTION_END){
+        finishTest();
     }
 }
 
 function finishTest() {
-    console.log('finishTest 수행됨');
     resultSectionShow();
+    calculateMBTI();
 }
-
 // 결과 영역을 보여줌
 function resultSectionShow() {
-    startContent.classList.add('--hide');
+    questionContent.classList.add('--hide');
     resultContent.classList.remove('--hide');
 }
 
+function calculateMBTI(){
+    
+}
