@@ -19,6 +19,7 @@ let EIScore = 0;
 let SNScore = 0;
 let TFScore = 0;
 let JPScore = 0;
+let result = undefined;
 
 function startTest(questions) {
     sectionShowHide();
@@ -27,15 +28,17 @@ function startTest(questions) {
 
 }
 
+/*
 function initTest(questions){
-    questionNum = 0;
     EIScore = 0;
     SNScore = 0;
     TFScore = 0;
     JPScore = 0;
     resultContent.classList.add('--hide');
+    questionNum = 0;
     startTest(questions);
 }
+*/
 
 function sectionShowHide(){
     startContent.classList.add('--hide');
@@ -66,9 +69,11 @@ function setEventListners(questions){
             progressTest(questions);
         }
     });
+    /*
     replayBtn.addEventListener('click', () => {
         initTest();
     });
+    */
 }
 
 function proceedProgressBar() {
@@ -112,7 +117,6 @@ function countScore(id){
 
 function finishTest() {
     resultSectionShow();
-    calculateMBTI();
 }
 // 결과 영역을 보여줌
 function resultSectionShow() {
@@ -120,6 +124,42 @@ function resultSectionShow() {
     resultContent.classList.remove('--hide');
 }
 
+function loadResults() {
+    return fetch('data/result.json')
+    .then(response => response.json())
+    .then(json =>json.results)
+    .catch(console.error);
+}
+
+loadResults()
+.then(results => {
+    calculateMBTI();
+    viewResult(results);
+});
+
 function calculateMBTI(){
-    
+        if(EIScore >= 2){
+            result = 'E';
+        }else{
+            result = 'I';
+        }
+        if(SNScore >= 2){
+            result = result + 'S';
+        }else {
+            result = result + 'N';
+        }
+        if(TFScore >= 2){
+            result = result + 'T';
+        }else {
+           result = result + 'F';
+        }if(JPScore >= 2){
+            result = result + 'J';
+        }else {
+            result = result + 'P';
+        }
+}
+
+function viewResult(results){
+    console.log(result);
+    console.log(results);
 }
