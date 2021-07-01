@@ -134,18 +134,18 @@ function calculateMBTI(){
             resultType = 'I';
         }
         if(SNScore >= 2){
-            resultType = resultType + 'S';
+            resultType += 'S';
         }else {
-            resultType = resultType + 'N';
+            resultType += 'N';
         }
         if(TFScore >= 2){
-            resultType = resultType + 'T';
+            resultType += 'T';
         }else {
-           resultType = resultType + 'F';
+           resultType += 'F';
         }if(JPScore >= 2){
-            resultType = resultType + 'J';
+            resultType += 'J';
         }else {
-            resultType = resultType + 'P';
+            resultType += 'P';
         }
     loadResults();
 }
