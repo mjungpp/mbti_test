@@ -14,7 +14,7 @@
             "type" : "EI",
             "A" : "당장 돌려내! 짱구에게 따진다.😡",
             "B" : "짱구가 엄청 먹고 싶었나보지.. 그냥 이해하고 참는다.🙁",
-            "imgPath" : "../img/question/question_2.jpg"
+            "imgPath" : "./img/question/question_2.jpg"
         },
         {
             "number" : "3",
@@ -22,7 +22,7 @@
             "type" : "EI",
             "A" : "이제 또 뭐하고 놀까?🤩",
             "B" : "이만 집에 가고싶다...😑",
-            "imgPath" : "../img/question/question_3.jpg"
+            "imgPath" : "./img/question/question_3.jpg"
         },
         {
             "number" : "4",
@@ -30,7 +30,7 @@
             "type" : "SN",
             "A" : "초코비는 달콤하고 바삭바삭하고 맛있지!😋",
             "B" : "어! 이건 짱구가 좋아하는건데.. 짱구 생각이 난다.🤔",
-            "imgPath" : "../img/question/question_4.jpg"
+            "imgPath" : "./img/question/question_4.jpg"
         },
         {
             "number" : "5",
@@ -38,7 +38,7 @@
             "type" : "SN",
             "A" : "익숙한 길이 좋아! 가던 길을 마저 간다.🙂",
             "B" : "오호 새로운 길인데? 가보고 싶어져! 새로운 길로 가본다.😎",
-            "imgPath" : "../img/question/question_5.jpg"
+            "imgPath" : "./img/question/question_5.jpg"
         },
                 {
             "number" : "6",
@@ -46,7 +46,7 @@
             "type" : "SN",
             "A" : "키가 180cm정도 되고 복면을 쓰고 있었어요!😲",
             "B" : "험악한 악당 같은 느낌이었어요!😦",
-            "imgPath" : "../img/question/question_6.jpg"
+            "imgPath" : "./img/question/question_6.jpg"
         },
         {
             "number" : "7",
@@ -54,7 +54,7 @@
             "type" : "TF",
             "A" : "절대 안돼! 안되는건 안되는거야!😠 단호하게 거절한다.",
             "B" : "마음이 약해져서 '그래.. 이번 한번만이야!' 라고 용서한다.🤫",
-            "imgPath" : "../img/question/question_7.jpg"
+            "imgPath" : "./img/question/question_7.jpg"
         },
                 {
             "number" : "8",
@@ -62,7 +62,7 @@
             "type" : "TF",
             "A" : "우리 서로 공평하게 경쟁하자!🔥",
             "B" : "우리 힘을 합쳐서 함께 우승하자!🌟",
-            "imgPath" : "../img/question/question_8.jpg"
+            "imgPath" : "./img/question/question_8.jpg"
         },
                 {
             "number" : "9",
@@ -70,7 +70,7 @@
             "type" : "TF",
             "A" : "수학 시간📚",
             "B" : "미술 시간🎨",
-            "imgPath" : "../img/question/question_9.png"
+            "imgPath" : "./img/question/question_9.png"
         },
                 {
             "number" : "10",
@@ -78,7 +78,7 @@
             "type" : "JP",
             "A" : "얼만큼 먹고.. 운동을 몇시간 하고.. 계획부터 세운다.🤔", 
             "B" : "일단 시작해보자! 무작정 나가서 뛴다.🐾",
-            "imgPath" : "../img/question/question_10.jpg"
+            "imgPath" : "./img/question/question_10.jpg"
         },
         {
             "number" : "11",
@@ -86,7 +86,7 @@
             "type" : "JP",
             "A" : "규칙은 우리 유치원을 위한거야! 잘 지켜야지😊",
             "B" : "규칙은 싫어! 불편하고 답답해!😑",
-            "imgPath" : "../img/question/question_11.jpg"
+            "imgPath" : "./img/question/question_11.jpg"
         },
         {
             "number" : "12",
@@ -94,7 +94,7 @@
             "type" : "JP",
             "A" : "신중하게 지도를 보고 어느 곳을 가야 재미있을까 생각한다.🤔",
             "B" : "발 길이 닿는대로! 일단 느낌이 가는 곳으로 출발한다.🏃‍♂️",
-            "imgPath" : "../img/question/question_12.jpg"
+            "imgPath" : "./img/question/question_12.jpg"
         }
     ]
 }
