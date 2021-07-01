@@ -4,9 +4,8 @@ const startBtn = document.querySelector('.mbti__startBtn');
 const startContent = document.querySelector('.mbti__start');
 const title = document.querySelector('.mbti__asking');
 const questionContent = document.querySelector('.mbti__question.--hide');
-const resultContent = document.querySelector('.mbti__result.--hide');
+const resultSection = document.querySelector('.mbti__result.--hide');
 const progressBar = document.querySelector('.skill__value');
-
 const buttonA = document.querySelector('#A');
 const buttonB = document.querySelector('#B');
 const replayBtn = document.querySelector('.result__replay');
@@ -19,26 +18,24 @@ let EIScore = 0;
 let SNScore = 0;
 let TFScore = 0;
 let JPScore = 0;
-let result = undefined;
+let resultType = undefined;
 
 function startTest(questions) {
     sectionShowHide();
     proceedProgressBar();
     progressTest(questions);
-
 }
 
-/*
+
 function initTest(questions){
     EIScore = 0;
     SNScore = 0;
     TFScore = 0;
     JPScore = 0;
-    resultContent.classList.add('--hide');
+    resultSection.classList.add('--hide');
     questionNum = 0;
     startTest(questions);
 }
-*/
 
 function sectionShowHide(){
     startContent.classList.add('--hide');
@@ -69,11 +66,10 @@ function setEventListners(questions){
             progressTest(questions);
         }
     });
-    /*
+
     replayBtn.addEventListener('click', () => {
-        initTest();
+        initTest(questions);
     });
-    */
 }
 
 function proceedProgressBar() {
@@ -94,19 +90,15 @@ function progressTest(questions) {
 function countScore(id){
     if(id == 'A') {
         if(questionNum < 4) {
-            console.log(questionNum);
             EIScore = EIScore + 1;
         }
         if(questionNum >= 4 && questionNum < 7){
-            console.log(questionNum);
             SNScore = SNScore + 1;
         }
         if(questionNum >=7 && questionNum < 10){
-            console.log(questionNum);
             TFScore = TFScore + 1;
         }
         if(questionNum >= 10 && questionNum < 13){
-            console.log(questionNum);
             JPScore = JPScore + 1;
         }
     }
@@ -117,49 +109,71 @@ function countScore(id){
 
 function finishTest() {
     resultSectionShow();
+    calculateMBTI();
 }
 // 결과 영역을 보여줌
 function resultSectionShow() {
     questionContent.classList.add('--hide');
-    resultContent.classList.remove('--hide');
+    resultSection.classList.remove('--hide');
 }
 
 function loadResults() {
     return fetch('data/result.json')
     .then(response => response.json())
     .then(json =>json.results)
+    .then(results => viewResult(results))
     .catch(console.error);
 }
 
-loadResults()
-.then(results => {
-    calculateMBTI();
-    viewResult(results);
-});
-
 function calculateMBTI(){
         if(EIScore >= 2){
-            result = 'E';
+            resultType = 'E';
         }else{
-            result = 'I';
+            resultType = 'I';
         }
         if(SNScore >= 2){
-            result = result + 'S';
+            resultType = resultType + 'S';
         }else {
-            result = result + 'N';
+            resultType = resultType + 'N';
         }
         if(TFScore >= 2){
-            result = result + 'T';
+            resultType = resultType + 'T';
         }else {
-           result = result + 'F';
+           resultType = resultType + 'F';
         }if(JPScore >= 2){
-            result = result + 'J';
+            resultType = resultType + 'J';
         }else {
-            result = result + 'P';
+            resultType = resultType + 'P';
         }
+    loadResults();
 }
 
 function viewResult(results){
-    console.log(result);
-    console.log(results);
+   results.forEach(result => {
+       if(resultType == result.type){
+        // const resultContent = 
+        //     `            
+        //     <h2 class="result__title">나의 유형은..❓</h2>
+        //     <h3 class="result__character">${result.character}</h3>
+        //     <img class="result__img" src="${result.imgPath}">
+        //     <span class="result__explanation">${result.explanation}</span>
+        //     <span class="result__matching__title">네 마음이 내 마음! 최고의 조합💕</span>
+        //     <span class="result__matching__character">${result.matchingCharacter}</span><br>
+        //     <span class="result__unmatching__title">파국이야! 최악의 조합💢</span>
+        //     <span class="result__unmatching__character">${result.unmatchingCharacter}</span><br>
+        //     `
+        //     resultSection.insertBefore(resultContent, replayBtn);
+        resultSection.innerHTML =
+            `            
+            <h2 class="result__title">나의 유형은..❓</h2>
+            <h3 class="result__character">${result.character}</h3>
+            <img class="result__img" src="${result.imgPath}">
+            <span class="result__explanation">${result.explanation}</span>
+            <span class="result__matching__title">네 마음이 내 마음! 최고의 조합💕</span>
+            <span class="result__matching__character">${result.matchingCharacter}</span><br>
+            <span class="result__unmatching__title">파국이야! 최악의 조합💢</span>
+            <span class="result__unmatching__character">${result.unmatchingCharacter}</span><br>
+            `
+       }
+   })
 }
