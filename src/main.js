@@ -10,6 +10,7 @@ const buttonA = document.querySelector('#A');
 const buttonB = document.querySelector('#B');
 const replayBtn = document.querySelector('.result__replay');
 const img = document.querySelector('.mbti__testImg');
+const resultContent = document.createElement('div');
 
 let questionNum = 0;
 const QUESTION_END = 12;
@@ -32,9 +33,10 @@ function initTest(questions){
     SNScore = 0;
     TFScore = 0;
     JPScore = 0;
-    resultSection.classList.add('--hide');
     questionNum = 0;
     startTest(questions);
+    resultSection.classList.add('--hide');
+    resultContent.innerHTML = '';
 }
 
 function sectionShowHide(){
@@ -149,21 +151,9 @@ function calculateMBTI(){
 }
 
 function viewResult(results){
-   results.forEach(result => {
+    results.forEach(result => {
        if(resultType == result.type){
-        // const resultContent = 
-        //     `            
-        //     <h2 class="result__title">나의 유형은..❓</h2>
-        //     <h3 class="result__character">${result.character}</h3>
-        //     <img class="result__img" src="${result.imgPath}">
-        //     <span class="result__explanation">${result.explanation}</span>
-        //     <span class="result__matching__title">네 마음이 내 마음! 최고의 조합💕</span>
-        //     <span class="result__matching__character">${result.matchingCharacter}</span><br>
-        //     <span class="result__unmatching__title">파국이야! 최악의 조합💢</span>
-        //     <span class="result__unmatching__character">${result.unmatchingCharacter}</span><br>
-        //     `
-        //     resultSection.insertBefore(resultContent, replayBtn);
-        resultSection.innerHTML =
+        resultContent.innerHTML = 
             `            
             <h2 class="result__title">나의 유형은..❓</h2>
             <h3 class="result__character">${result.character}</h3>
@@ -173,7 +163,8 @@ function viewResult(results){
             <span class="result__matching__character">${result.matchingCharacter}</span><br>
             <span class="result__unmatching__title">파국이야! 최악의 조합💢</span>
             <span class="result__unmatching__character">${result.unmatchingCharacter}</span><br>
-            `
+            `;
+            resultSection.insertBefore(resultContent, replayBtn);
        }
    })
 }
