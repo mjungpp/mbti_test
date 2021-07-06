@@ -49,10 +49,6 @@ https://mjungpp.github.io/mbti_test/
 
 #### minjung park 👩‍💻
 
-##### email✉️
+##### email✉️ : mjungpp@naver.com<br>
 
-mjungpp@naver.com<br>
-
-##### github profile :octocat:
-
-https://github.com/mjungpp
+##### github profile :octocat: : https://github.com/mjungpp
