@@ -1,7 +1,5 @@
 # ✨짱구 MBTI 성향 검사✨
 
----
-
 #### What's MBTI❓
 
 > 개인이 쉽게 응답할 수 있는 자기보고서 문항을 통해 인식하고 판단할 때의 각자 선호하는 경향을 찾고, 이러한 선호 경향들이 인간의 행동에 어떠한 영향을 미치는가를 파악하여 실생활에 응용할 수 있도록 제작된 심리 검사이다. (출처 : wikipedia)
@@ -13,7 +11,7 @@
 #### Execution🌐
 
 https://mjungpp.github.io/mbti_test/
-본 프로젝트는 반응형으로 제작되어 💻과 📱에 모두 최적화 되어있습니다.
+<br>본 프로젝트는 반응형으로 제작되어 💻과 📱에 모두 최적화 되어있습니다.
 
 #### Production period📅
 
@@ -28,9 +26,9 @@ https://mjungpp.github.io/mbti_test/
 
 #### Use skills🔨
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/></a>
 
 #### Source Tree🌳
 
