@@ -13,7 +13,7 @@ const img = document.querySelector('.mbti__testImg');
 const resultContent = document.createElement('div');
 
 let questionNum = 0;
-const QUESTION_END = 12;
+const QUESTION_END = 20;
 
 let EIScore = 0;
 let SNScore = 0;
@@ -75,7 +75,7 @@ function setEventListners(questions){
 }
 
 function proceedProgressBar() {
-    progressBar.style.width = `calc(100 / 12 * ${questionNum+1}%)`;
+    progressBar.style.width = `calc(100 / ${QUESTION_END} * ${questionNum+1}%)`;
 }
 
 function progressTest(questions) {
@@ -91,16 +91,16 @@ function progressTest(questions) {
 
 function countScore(id){
     if(id == 'A') {
-        if(questionNum < 4) {
+        if(questionNum < 6) {
             EIScore = EIScore + 1;
         }
-        if(questionNum >= 4 && questionNum < 7){
+        if(questionNum >= 6 && questionNum < 11){
             SNScore = SNScore + 1;
         }
-        if(questionNum >=7 && questionNum < 10){
+        if(questionNum >=11 && questionNum < 16){
             TFScore = TFScore + 1;
         }
-        if(questionNum >= 10 && questionNum < 13){
+        if(questionNum >= 16 && questionNum < 21){
             JPScore = JPScore + 1;
         }
     }
@@ -128,21 +128,21 @@ function loadResults() {
 }
 
 function calculateMBTI(){
-        if(EIScore >= 2){
+        if(EIScore >= 4){
             resultType = 'E';
         }else{
             resultType = 'I';
         }
-        if(SNScore >= 2){
+        if(SNScore >= 4){
             resultType += 'S';
         }else {
             resultType += 'N';
         }
-        if(TFScore >= 2){
+        if(TFScore >= 4){
             resultType += 'T';
         }else {
            resultType += 'F';
-        }if(JPScore >= 2){
+        }if(JPScore >= 4){
             resultType += 'J';
         }else {
             resultType += 'P';
@@ -156,7 +156,7 @@ function viewResult(results){
         resultContent.innerHTML = 
             `            
             <h2 class="result__title">나의 유형은..❓</h2>
-            <h3 class="result__character">${result.character}</h3>
+            <h3 class="result__character">${result.character}, (${result.type})</h3>
             <img class="result__img" src="${result.imgPath}">
             <span class="result__explanation">${result.explanation}</span>
             <span class="result__matching__title">네 마음이 내 마음! 최고의 조합💕</span>
