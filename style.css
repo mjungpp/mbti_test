@@ -19,6 +19,7 @@
   --font-micro: 12px;
   --margin-updown: 10px;
   --border-radius: 5px;
+  --padding-size : 10px;
 }
 
 @font-face {
@@ -72,6 +73,7 @@ span {
   background-color: var(--color-yellow);
   border-radius: 8px;
   text-align: center;
+  padding: 0 var(--padding-size);
 }
 
 .mbti__start {
@@ -216,13 +218,14 @@ span {
     --font-large: 20px;
     --font-medium: 18px;
     --font-small: 14px;
-    --font-micro: 8px;
+    --font-micro: 11px;
     --main-size: 300px;
     --img-width: 300px;
     --img-height: 240px;
     --margin-updown: 15px;
     --result-width: 250px;
     --button-width: 250px;
+    --padding-size : 8px;
   }
 
   .result__title {
