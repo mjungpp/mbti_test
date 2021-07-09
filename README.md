@@ -15,7 +15,8 @@ https://mjungpp.github.io/mbti_test/
 
 ### Production period📅
 
-2021.06.25 ~ 2021.07.01 (7 days)
+2021.06.25 ~ 2021.07.01 (7 days) 제작
+2021.07.09 (1 days) 피드백 반영 후 수정
 
 ### Description🔍
 
@@ -44,6 +45,35 @@ https://mjungpp.github.io/mbti_test/
 ┣ 📜index.html<br>
 ┣ 📜README.md<br>
 ┗ 📜style.css<br>
+
+### Feedback🔖
+
+피드백 결과 제 테스트에서 다음과 같은 문제를 발견했습니다.
+
+##### 1. Result 화면에 대한 complain
+
+👤 : 결과에서 MBTI 유형은 나오지 않고 캐릭터와 특성만 나와서 결과의 MBTI 유형을 알 수 없어!
+
+##### 2. 결과 유형이 실제 유형과 다름
+
+테스트 결과 본인의 기존 유형과, 제 MBTI 테스트 결과가 일치하지 않는 사용자가 몇몇 발생했습니다.
+| number | 기존 본인 유형 | 테스트 결과 유형 |
+| :---: | :-: | :-: |
+| 1 | ENFP | INFP |
+| 2 | INFP | ISFP |
+| 3 | INFP | ENTP |
+| 4 | ENFP | ISFJ |
+| 5 | INFP | ISTP |
+| 6 | ESTJ | ESFP |
+| 7 | ESTP | ESFP |
+| 8 | INFP | ISFP |
+| 9 | INTJ | ISFJ |
+| 10 | INFP | INFJ |
+...
+이에 따라
+
+1. 결과 화면에 MBTI 유형을 출력
+2. 검사 정확도를 높이기 위한 json 데이터 추가 작업을 진행하였습니다.
 
 ### Productor :busts_in_silhouette:
 
