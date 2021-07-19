@@ -214,7 +214,7 @@ span {
 @media screen and (max-width: 768px) {
   :root {
     --contents-width: 350px;
-    --contents-height: 650px;
+    --contents-height: 630px;
     --title-width: 300px;
     --font-large: 20px;
     --font-medium: 18px;
