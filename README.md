@@ -33,18 +33,17 @@
 
 ### Source Tree🌳
 
-📦mbti_test<br>
-┣ 📂data<br>
-┃ ┣ 📜data.json<br>
-┃ ┗ 📜result.json<br>
-┣ 📂img<br>
-┃ ┣ 📂question<br>
-┃ ┣ 📂results<br>
-┣ 📂src<br>
-┃ ┗ 📜main.js<br>
-┣ 📜index.html<br>
-┣ 📜README.md<br>
-┗ 📜style.css<br>
+mbti_test                 
+├─ data                   
+│  ├─ data.json           
+│  └─ result.json         
+├─ img                    
+│  ├─ question            
+│  ├─ results                     
+├─ src                    
+│  └─ main.js             
+├─ index.html                      
+└─ style.css              
 
 ### Feedback🔖
 
