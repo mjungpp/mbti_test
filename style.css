@@ -214,7 +214,7 @@ span {
 @media screen and (max-width: 768px) {
   :root {
     --contents-width: 350px;
-    --contents-height: 600px;
+    --contents-height: 650px;
     --title-width: 300px;
     --font-large: 20px;
     --font-medium: 18px;
@@ -239,10 +239,5 @@ span {
   }
   .result__explanation {
     padding: 8px 4px;
-  }
-
-  .result__img {
-    width: var(--img-width);
-    height: var(--img-height);
   }
 }
