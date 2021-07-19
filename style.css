@@ -19,7 +19,7 @@
   --font-micro: 12px;
   --margin-updown: 10px;
   --border-radius: 5px;
-  --padding-size : 10px;
+  --padding-size: 10px;
 }
 
 @font-face {
@@ -196,6 +196,7 @@ span {
   margin-top: var(--margin-updown);
   background-color: var(--color-red);
   color: var(--color-white);
+  margin-bottom: 10px;
 }
 
 .result__matching__title,
@@ -220,12 +221,12 @@ span {
     --font-small: 14px;
     --font-micro: 11px;
     --main-size: 300px;
-    --img-width: 300px;
-    --img-height: 240px;
+    --img-width: 200px;
+    --img-height: 200px;
     --margin-updown: 15px;
     --result-width: 250px;
     --button-width: 300px;
-    --padding-size : 8px;
+    --padding-size: 8px;
   }
 
   .result__title {
@@ -238,5 +239,10 @@ span {
   }
   .result__explanation {
     padding: 8px 4px;
+  }
+
+  .result__img {
+    width: var(--img-width);
+    height: var(--img-height);
   }
 }
