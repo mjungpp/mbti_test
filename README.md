@@ -18,7 +18,7 @@ MBTI 테스트를 해보고 공유하는 것도 정말 즐겨했습니다. 어�
 ```
 
 <h2 align="center"><em>Execution🌎</em></h2>
-<p align="center"><em><a href=https://zzangumbti.netlify.app/"> Let's start!</a></em><br/>
+<p align="center"><em><a href=https://zzangumbti.netlify.app/> Let's start!</a></em><br/>
 <br/><em>
 - 본 프로젝트는 반응형으로 제작되어, 💻과 📱에 모두 최적화 되어있습니다.<br>
 - 해당 프로젝트는 netlify로 배포되었습니다.</em></p>
